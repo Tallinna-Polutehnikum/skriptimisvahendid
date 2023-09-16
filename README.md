@@ -1,6 +1,6 @@
 **Skriptimisvahendite mooduli - Python**
 
-**Õpetaja:** TOivo Pärnpuu
+**Õpetaja:** Toivo Pärnpuu
 
 **Keel:** Python
 
