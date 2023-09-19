@@ -20,7 +20,7 @@
 **Tund 1-4 (esimene kohtumine)**
 
 * Sissejuhatus skriptimisvahendite moodulisse
-* [Programmeerimise põhimõisted](https://github.com/Tallinna-Polutehnikum/skriptimisvahendid/sisu/01_programmeerimse_põhimõisted.md)
+* [Programmeerimise põhimõisted](https://github.com/Tallinna-Polutehnikum/skriptimisvahendid/sisu/blob/01_programmeerimse_põhimõisted.md)
 * Pythoni keele põhitõed
 * Skriptimiskeskkonna loomine
 * Esimene skript
