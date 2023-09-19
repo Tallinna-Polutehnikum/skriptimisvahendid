@@ -22,8 +22,7 @@
 * Sissejuhatus skriptimisvahendite moodulisse
 * [Programmeerimise põhimõisted](https://github.com/Tallinna-Polutehnikum/skriptimisvahendid/blob/main/sisu/01_programmeerimse_p%C3%B5him%C3%B5isted.md)
 * Pythoni keele põhitõed
-* Skriptimiskeskkonna loomine
-* Esimene skript
+* [Skriptimiskeskkonna loomine ja esimene skript](https://github.com/Tallinna-Polutehnikum/skriptimisvahendid/blob/main/sisu/02-visualstudio-code-ja-git.md)
 
 **Tund 5-8 (teine kohtumine)**
 
