@@ -20,7 +20,7 @@
 **Tund 1-4 (esimene kohtumine)**
 
 * Sissejuhatus skriptimisvahendite moodulisse
-* Programmeerimise põhimõisted
+* Programmeerimise põhimõisted (sisu/01 - programmeerimse põhimõisted.md)
 * Pythoni keele põhitõed
 * Skriptimiskeskkonna loomine
 * Esimene skript
