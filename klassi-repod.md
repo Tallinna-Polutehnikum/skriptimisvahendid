@@ -8,3 +8,5 @@
 ## Õpilaste repod
 
 <!-- Lisa oma rida siia, formaat: - [Eesnimi P](https://github.com/kasutajanimi/repo) -->
+
+- [Villu K](https://github.com/villukaljurand/repo.git)
