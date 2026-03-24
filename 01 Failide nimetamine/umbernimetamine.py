@@ -44,3 +44,9 @@ for failinimi in os.listdir(kaust):
     uus_tee  = os.path.join(kaust, uus_nimi)
     os.rename(vana_tee, uus_tee)
     print(f"  {failinimi}  →  {uus_nimi}")
+
+
+print("Failid pärast ümbernimetamist:")
+print("-" * 35)
+for failinimi in sorted(os.listdir(kaust)):
+    print(failinimi)
