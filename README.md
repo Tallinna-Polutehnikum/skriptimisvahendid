@@ -13,6 +13,15 @@
 * Automatiseerib rakendusserverite haldamiseks vajalikud haldustegevused kasutades skriptimise rakendusliidest;
 * Kasutab matemaatikat ja loogika põhiseoseid skriptide koostamisel.
 
+**Korrektuurid ja kokkulepped**
+
+- Aluseks on Python, Flowgarithm, Thonny (IDE)
+- Visual Studio Code (töövahend)
+- Versiooniahaldussüsteem (Git ja Github)
+- Mis on GIT?
+- Mis on GITHUB?
+**Mõtted**
+- 
 **Tundide arv:** 12 kontakttundi + 14 iseseisva töö tundi
 
 **Tundide jaotus:**
