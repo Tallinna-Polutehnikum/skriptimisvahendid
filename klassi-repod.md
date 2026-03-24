@@ -7,4 +7,4 @@
 
 ## Õpilaste repod
 
-<!-- Lisa oma rida siia, formaat: - [Eesnimi P](https://github.com/kasutajanimi/repo) -->
+- [Mikk M](https://github.com/mmaasik/mm-repo)
