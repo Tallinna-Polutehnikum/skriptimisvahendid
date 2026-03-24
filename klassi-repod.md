@@ -9,4 +9,4 @@
 
 <!-- Lisa oma rida siia, formaat: - [Eesnimi P](https://github.com/kasutajanimi/repo) -->
 
-- [Villu K](https://github.com/villukaljurand/repo.git)
+- [Villu K](https://github.com/villukaljurand/skriptimisvahendid.git)
