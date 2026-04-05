@@ -7,4 +7,4 @@
 
 ## Õpilaste repod
 
-<!-- Lisa oma rida siia, formaat: - [Eesnimi P](https://github.com/kasutajanimi/repo) -->
+- [Jan V](https://github.com/JanV989/minu-projekt)
