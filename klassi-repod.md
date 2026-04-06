@@ -8,6 +8,8 @@
 ## Õpilaste repod
 
 <!-- Lisa oma rida siia, formaat: - [Eesnimi P](https://github.com/kasutajanimi/repo) -->
+
+- [Villu K](https://github.com/villukaljurand/skriptimisvahendid.git)
 - [Tarmo M] https://github.com/tarmomihhotin/minu-projekt.git
 - [Sander L](https://github.com/sanderluik-KIT/skriptimisvahendid)
 - [Siim-Artur S](https://github.com/Filthy2k/skriptimisvahendid.git)
