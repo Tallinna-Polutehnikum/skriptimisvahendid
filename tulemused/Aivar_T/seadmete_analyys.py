@@ -1,44 +1,40 @@
 import csv
 from datetime import date
 
-seadmed = []  # tühi nimekiri, kuhu salvestame kõik read
+seadmed = []
 
 with open("seadmed.csv", newline="", encoding="utf-8") as f:
-    lugeja = csv.DictReader(f)  # DictReader loeb iga rea sõnastikuna
+    lugeja = csv.DictReader(f)
     for rida in lugeja:
-        seadmed.append(rida)    # lisa iga seade nimekirja
+        seadmed.append(rida)
 
 print(f"Kokku seadmeid andmebaasis: {len(seadmed)}")
 print()
 
-# Vaata, milline näeb välja üks rida
 print("Näidis — esimene seade:")
 print("-" * 40)
 for väli, väärtus in seadmed[0].items():
     print(f"  {väli}: {väärtus}")
 
+
 tana = date.today()
 
-vanad_uuendused  = []  # seadmed, mida pole üle aasta uuendatud
-vähe_ruumi       = []  # seadmed, kus vaba kettaruum alla 10%
-aegunud_garantii = []  # seadmed, mille garantii on lõppenud
+vanad_uuendused = []
+vähe_ruumi = []
+aegunud_garantii = []
 
 for seade in seadmed:
-
-    # Kontrolli viimast uuendust
     uuendus = date.fromisoformat(seade["viimane_uuendus"])
     paevi_tagasi = (tana - uuendus).days
     if paevi_tagasi > 365:
         vanad_uuendused.append((seade["nimi"], paevi_tagasi))
 
-    # Kontrolli kettaruumi
     kokku = int(seade["kettaruum_gb"])
-    vaba  = int(seade["kettaruum_vaba_gb"])
+    vaba = int(seade["kettaruum_vaba_gb"])
     protsent = vaba / kokku * 100
     if protsent < 10:
         vähe_ruumi.append((seade["nimi"], round(protsent, 1)))
 
-    # Kontrolli garantiid
     garantii = date.fromisoformat(seade["garantii_lõpp"])
     if garantii < tana:
         aegunud_garantii.append((seade["nimi"], seade["garantii_lõpp"]))
@@ -55,7 +51,8 @@ print("\nSeadmed, mille garantii on lõppenud:")
 for nimi, kuupäev in aegunud_garantii:
     print(f"  {nimi} — lõppes {kuupäev}")
 
-osakonnad = {}  # sõnastik: osakonna nimi → seadmete arv
+
+osakonnad = {}
 
 for seade in seadmed:
     osakond = seade["osakond"]
@@ -67,15 +64,15 @@ print("\nSeadmete arv osakondade kaupa:")
 for osakond, arv in sorted(osakonnad.items()):
     print(f"  {osakond}: {arv} seadet")
 
-# Keskmine vaba kettaruum
 vaba_ruumid = [int(s["kettaruum_vaba_gb"]) for s in seadmed]
 keskmine_vaba = sum(vaba_ruumid) / len(vaba_ruumid)
 print(f"\nKeskmine vaba kettaruum: {round(keskmine_vaba, 1)} GB")
 
+
 with open("probleemseadmed.csv", "w", newline="", encoding="utf-8") as f:
     väljad = ["nimi", "probleem", "detail"]
     kirjutaja = csv.DictWriter(f, fieldnames=väljad)
-    kirjutaja.writeheader()  # kirjuta päiserida
+    kirjutaja.writeheader()
 
     for nimi, paevi in vanad_uuendused:
         kirjutaja.writerow({

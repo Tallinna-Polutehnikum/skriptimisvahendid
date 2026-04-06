@@ -16,7 +16,7 @@ print("Näidis — esimene seade:")
 print("-" * 40)
 for väli, väärtus in seadmed[0].items():
     print(f"  {väli}: {väärtus}")
-
+    
 tana = date.today()
 
 vanad_uuendused  = []  # seadmed, mida pole üle aasta uuendatud
@@ -54,7 +54,7 @@ for nimi, protsent in vähe_ruumi:
 print("\nSeadmed, mille garantii on lõppenud:")
 for nimi, kuupäev in aegunud_garantii:
     print(f"  {nimi} — lõppes {kuupäev}")
-
+    
 osakonnad = {}  # sõnastik: osakonna nimi → seadmete arv
 
 for seade in seadmed:
