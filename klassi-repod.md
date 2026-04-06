@@ -8,3 +8,4 @@
 ## Õpilaste repod
 
 <!-- Lisa oma rida siia, formaat: - [Eesnimi P](https://github.com/kasutajanimi/repo) -->
+- [Aivar T](https://github.com/Kampari-43/minu-projekt)
