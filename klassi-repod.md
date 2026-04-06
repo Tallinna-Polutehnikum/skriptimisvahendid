@@ -8,6 +8,7 @@
 ## Õpilaste repod
 
 <!-- Lisa oma rida siia, formaat: - [Eesnimi P](https://github.com/kasutajanimi/repo) -->
+- [Martin E](https://github.com/duffman5/minu-projekt)
 - [Aleksandr Ž](https://github.com/aleksze/minu-projekt.git) 
 - [Villu K](https://github.com/villukaljurand/skriptimisvahendid.git)
 - [Tarmo M] https://github.com/tarmomihhotin/minu-projekt.git
