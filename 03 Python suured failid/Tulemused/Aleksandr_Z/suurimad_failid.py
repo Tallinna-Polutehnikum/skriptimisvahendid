@@ -51,14 +51,13 @@ for rida in tulemus:
     print(f"{rida['Nimi']} -> {rida['Suurus']}")
 
 repo_juur = Path(__file__).resolve().parent.parent
-valjund_kaust = repo_juur / "03 Python suured failid" / "Tulemused" / "Aleksandr_Z"
-valjund_kaust.mkdir(parents=True, exist_ok=True)
+valjund = Path("tulemused/Aleksandr_Z/suurimad_failid.csv")
+valjund.parent.mkdir(parents=True, exist_ok=True)
 
-valjund_fail = valjund_kaust / "suurimad_failid.csv"
 
-with open(valjund_fail, "w", newline="", encoding="utf-8") as f:
-    kirjutaja = csv.DictWriter(f, fieldnames=["Tee", "Nimi", "Suurus"])
-    kirjutaja.writeheader()
-    kirjutaja.writerows(tulemus)
+with open(valjund, "w", newline="", encoding="utf-8") as f:
+    writer = csv.DictWriter(f, fieldnames=["Tee", "Nimi", "Suurus"])
+    writer.writeheader()
+    writer.writerows(tulemus)
 
-print(f"\nCSV salvestatud faili: {valjund_fail}")
+print("Valmis! Fail loodud:", valjund)
