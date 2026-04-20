@@ -16,7 +16,7 @@ print("Näidis — esimene seade:")
 print("-" * 40)
 for väli, väärtus in seadmed[0].items():
     print(f"  {väli}: {väärtus}")
-
+print()
 tana = date.today()
 
 vanad_uuendused  = []  # seadmed, mida pole üle aasta uuendatud
@@ -54,7 +54,6 @@ for nimi, protsent in vähe_ruumi:
 print("\nSeadmed, mille garantii on lõppenud:")
 for nimi, kuupäev in aegunud_garantii:
     print(f"  {nimi} — lõppes {kuupäev}")
-
 
 osakonnad = {}  # sõnastik: osakonna nimi → seadmete arv
 
@@ -100,3 +99,35 @@ with open("probleemseadmed.csv", "w", newline="", encoding="utf-8") as f:
         })
 
 print("Aruanne salvestatud faili: probleemseadmed.csv")
+
+windows10_seadmed = []
+
+for seade in seadmed:
+    if seade["os"] == "Windows 10":
+        windows10_seadmed.append(seade)
+
+print(f"Windows 10 seadmeid: {len(windows10_seadmed)}")
+
+vahe_ruumi_sorted = sorted(
+    seadmed,
+    key=lambda x: (float(x["kettaruum_vaba_gb"]) / float(x["kettaruum_gb"])) * 100
+)
+
+for s in vahe_ruumi_sorted:
+    protsent = (float(s["kettaruum_vaba_gb"]) / float(s["kettaruum_gb"])) * 100
+    print(s["nimi"], f"{protsent:.1f}%")
+
+    from datetime import datetime, timedelta
+
+tana = datetime.today()
+kuue_kuu_parast = tana + timedelta(days=180)
+
+loppev_garantii = []
+
+for s in seadmed:
+    lopp = datetime.strptime(s["garantii_lõpp"], "%Y-%m-%d")
+
+    if tana <= lopp <= kuue_kuu_parast:
+        loppev_garantii.append(s)
+
+print(f"Järgmise 6 kuu jooksul lõppeb garantii: {len(loppev_garantii)}")
