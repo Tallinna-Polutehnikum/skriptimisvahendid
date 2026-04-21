@@ -1,0 +1,7 @@
+seadme_id,nimi,tüüp,osakond,os,viimane_uuendus,kettaruum_gb,kettaruum_vaba_gb,garantii_lõpp
+PC-001,RIKU-LAPTOP,laptop,IT,Windows 11,2024-11-03,512,48,2026-03-15
+PC-003,TOIVO-LAPTOP,laptop,IT,Windows 11,2025-01-15,1024,387,2027-05-20
+PC-005,SERVER-01,server,IT,Ubuntu 22.04,2025-01-20,4096,1203,2028-01-10
+PC-009,SERVER-02,server,IT,Ubuntu 22.04,2025-01-18,8192,3401,2028-06-30
+PC-011,RAIN-LAPTOP,laptop,IT,Windows 11,2025-01-10,512,312,2027-03-01
+PC-014,SANDER-DESKTOP,desktop,IT,Windows 11,2024-10-05,512,265,2026-10-05
