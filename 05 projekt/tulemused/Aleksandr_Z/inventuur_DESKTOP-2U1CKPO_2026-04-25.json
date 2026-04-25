@@ -1,0 +1,97 @@
+{
+  "ajamäär": "2026-04-25T19:13:28Z",
+  "host": "DESKTOP-2U1CKPO",
+  "kasutaja": "szele",
+  "python": "3.11.9",
+  "os": {
+    "süsteem": "Windows",
+    "versioon": "10.0.19045",
+    "release": "10",
+    "arhitektuur": "64bit"
+  },
+  "cpu": {
+    "mudel": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "südamikud_füüsilised": 14,
+    "südamikud_loogilised": 20,
+    "kasutus_protsent": 2.6
+  },
+  "mälu": {
+    "kokku_gb": 63.84,
+    "kasutuses_gb": 17.66,
+    "vaba_gb": 46.18,
+    "kasutus_protsent": 27.7
+  },
+  "kettad": [
+    {
+      "haakepunkt": "B:\\",
+      "seade": "B:\\",
+      "failisüsteem": "NTFS",
+      "kokku_gb": 931.5,
+      "vaba_gb": 67.93,
+      "kasutus_protsent": 92.7
+    },
+    {
+      "haakepunkt": "C:\\",
+      "seade": "C:\\",
+      "failisüsteem": "NTFS",
+      "kokku_gb": 930.87,
+      "vaba_gb": 249.91,
+      "kasutus_protsent": 73.2
+    },
+    {
+      "haakepunkt": "D:\\",
+      "seade": "D:\\",
+      "failisüsteem": "NTFS",
+      "kokku_gb": 3726.01,
+      "vaba_gb": 1579.59,
+      "kasutus_protsent": 57.6
+    }
+  ],
+  "võrk": [
+    {
+      "nimi": "Radmin VPN",
+      "ipv4": "26.20.198.233",
+      "ühendatud": true
+    },
+    {
+      "nimi": "Ethernet",
+      "ipv4": "192.168.1.50",
+      "ühendatud": true
+    },
+    {
+      "nimi": "Ethernet 2",
+      "ipv4": "169.254.201.137",
+      "ühendatud": true
+    },
+    {
+      "nimi": "Беспроводная сеть",
+      "ipv4": "169.254.242.55",
+      "ühendatud": false
+    },
+    {
+      "nimi": "Подключение по локальной сети* 9",
+      "ipv4": "169.254.33.253",
+      "ühendatud": false
+    },
+    {
+      "nimi": "Подключение по локальной сети* 10",
+      "ipv4": "169.254.107.35",
+      "ühendatud": false
+    },
+    {
+      "nimi": "Сетевое подключение Bluetooth",
+      "ipv4": "169.254.99.44",
+      "ühendatud": false
+    },
+    {
+      "nimi": "Teredo Tunneling Pseudo-Interface",
+      "ipv4": null,
+      "ühendatud": true
+    },
+    {
+      "nimi": "Loopback Pseudo-Interface 1",
+      "ipv4": null,
+      "ühendatud": true
+    }
+  ]
+}
