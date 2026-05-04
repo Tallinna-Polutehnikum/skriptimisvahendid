@@ -43,18 +43,19 @@ for seade in seadmed:
     if garantii < tana:
         aegunud_garantii.append((seade["nimi"], seade["garantii_lõpp"]))
 
-print("Seadmed, mida pole üle aasta uuendatud:")
+
+print("\nSeadmed, mida pole üle aasta uuendatud:")
 for nimi, paevi in vanad_uuendused:
     print(f"  {nimi} — {paevi} päeva tagasi")
 
+
 print("\nSeadmed, kus vaba kettaruum alla 10%:")
-for nimi, protsent in vähe_ruumi:
+for nimi, protsent in sorted(vähe_ruumi, key=lambda x: x[1]):
     print(f"  {nimi} — {protsent}% vaba")
 
 print("\nSeadmed, mille garantii on lõppenud:")
 for nimi, kuupäev in aegunud_garantii:
     print(f"  {nimi} — lõppes {kuupäev}")
-
 
 osakonnad = {}  # sõnastik: osakonna nimi → seadmete arv
 
@@ -99,4 +100,21 @@ with open("probleemseadmed.csv", "w", newline="", encoding="utf-8") as f:
             "detail": kuupäev
         })
 
-print("Aruanne salvestatud faili: probleemseadmed.csv")
+print("\nAruanne salvestatud faili: probleemseadmed.csv")
+
+print("\nWindows 10 seadmed:")
+for seade in seadmed:
+    if seade["os"] == "Windows 10":
+        print(f"  {seade['nimi']} - {seade['os']}")
+
+from datetime import timedelta
+
+kuus_kuud = timedelta(days=180)
+loeb_varsti_loppevad = 0
+
+for seade in seadmed:
+    garantii = date.fromisoformat(seade["garantii_lõpp"])
+    if tana <= garantii <= tana + kuus_kuud:
+        loeb_varsti_loppevad += 1
+
+print(f"\nSeadmeid, mille garantii lõpeb järgmise 6 kuu jooksul: {loeb_varsti_loppevad}")
