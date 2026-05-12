@@ -1,0 +1,5 @@
+"Nimi","Host","Port","Olek","Viivitus_ms","Kontrollitud","Kirjeldus"
+"google","google.com","443","OK",,"2026-04-25 22:09:06","Avalik võrgutest"
+"github","github.com","443","OK",,"2026-04-25 22:09:06","Git push"
+"localhost","127.0.0.1","80","FAIL","0","2026-04-25 22:09:12","Lokaalne test"
+"vale-host","ei-ole-olemas.invalid","443","FAIL",,"2026-04-25 22:09:12","Test FAIL"
