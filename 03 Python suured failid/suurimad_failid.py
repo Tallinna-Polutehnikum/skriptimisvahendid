@@ -1,64 +1,62 @@
 from pathlib import Path
-import tempfile
 import csv
 
-def inimloetav_suurus(byte):
-    if byte >= 1024 ** 3:
-        return f"{byte / (1024 ** 3):.2f} GB"
-    elif byte >= 1024 ** 2:
-        return f"{byte / (1024 ** 2):.2f} MB"
-    elif byte >= 1024:
-        return f"{byte / 1024:.2f} KB"
-    return f"{byte} B"
 
-kodu = Path.home()
-temp_kaust = Path(tempfile.gettempdir()).resolve()
+def vorminda_suurus(baidid: int) -> str:
+    #Teisendab baitide arvu loetavasse ühikusse
+    if baidid >= 1_073_741_824:  # 1 GB = 1024^3
+        return f"{baidid / 1_073_741_824:.1f} GB"
+    elif baidid >= 1_048_576:    # 1 MB = 1024^2
+        return f"{baidid / 1_048_576:.1f} MB"
+    else:                        # KB
+        return f"{baidid / 1024:.1f} KB"
 
-failid = []
-for fail in kodu.rglob("*"):
-    try:
-        fail_resolved = fail.resolve()
 
-        if fail_resolved == temp_kaust or temp_kaust in fail_resolved.parents:
+def leia_suurimad_failid(kaust: Path, n: int = 10):
+   # käib kausta läbi, kogub failid koos suurusegajätab ligipääsmatud vahele ja tagastab n suurimat
+    kandidaadid = []
+
+    for p in kaust.rglob("*"):
+        try:
+            if p.is_file():
+                suurus = p.stat().st_size
+                kandidaadid.append((suurus, p))
+        except PermissionError:
+
             continue
 
-        if fail_resolved.is_file():
-            suurus = fail_resolved.stat().st_size
-            failid.append((fail_resolved, suurus))
+    kandidaadid.sort(key=lambda x: x[0], reverse=True)
+    return kandidaadid[:n]
 
-    except (PermissionError, FileNotFoundError, OSError):
-        continue
 
-print(f"Leitud faile kokku: {len(failid)}")
+def main():
+    # kasutaja kodukaust
+    kodu = Path.home()
 
-failid_sorditud = sorted(
-    failid,
-    key=lambda x: x[1],
-    reverse=True
-)[:10]
+    # leia, sorteeri, võta 10 suurimat
+    top10 = leia_suurimad_failid(kodu, n=10)
 
-tulemus = []
+    #  CSV read
+    tulemus = []
+    for suurus, fail in top10:
+        tulemus.append({
+            "Tee": str(fail),
+            "Nimi": fail.name,
+            "Suurus": vorminda_suurus(suurus)
+        })
 
-for fail, suurus in failid_sorditud:
-    tulemus.append({
-        "Tee": str(fail),
-        "Nimi": fail.name,
-        "Suurus": inimloetav_suurus(suurus)
-    })
+    # CSV: tulemused\Kaspar_L\
 
-print("\n10 kõige suuremat faili:")
-for rida in tulemus:
-    print(f"{rida['Nimi']} -> {rida['Suurus']}")
+    valjund = Path(__file__).resolve().parent / "Tulemused" / "Kaspar_L" / "suurimad_failid.csv"
+    valjund.parent.mkdir(parents=True, exist_ok=True)
 
-repo_juur = Path(__file__).resolve().parent.parent
-valjund_kaust = repo_juur / "03 Python suured failid" / "Tulemused" / "Aivar_T"
-valjund_kaust.mkdir(parents=True, exist_ok=True)
+    with valjund.open("w", newline="", encoding="utf-8") as f:
+        kirjutaja = csv.DictWriter(f, fieldnames=["Tee", "Nimi", "Suurus"])
+        kirjutaja.writeheader()
+        kirjutaja.writerows(tulemus)
 
-valjund_fail = valjund_kaust / "suurimad_failid.csv"
+    print(f"Salvestatud: {valjund}")
 
-with open(valjund_fail, "w", newline="", encoding="utf-8") as f:
-    kirjutaja = csv.DictWriter(f, fieldnames=["Tee", "Nimi", "Suurus"])
-    kirjutaja.writeheader()
-    kirjutaja.writerows(tulemus)
 
-print(f"\nCSV salvestatud faili: {valjund_fail}")
+if __name__ == "__main__":
+    main()
