@@ -1,0 +1,79 @@
+{
+  "ajamäär": "2026-05-20T17:23:02Z",
+  "host": "DESKTOP-JIHSUB5",
+  "kasutaja": "Kaspar Lindma",
+  "python": "3.14.5",
+  "os": {
+    "süsteem": "Windows",
+    "versioon": "10.0.26200",
+    "release": "11",
+    "arhitektuur": "64bit"
+  },
+  "cpu": {
+    "mudel": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+    "südamikud_füüsilised": 10,
+    "südamikud_loogilised": 12,
+    "kasutus_protsent": 0.8
+  },
+  "mälu": {
+    "kokku_gb": 31.68,
+    "kasutuses_gb": 13.55,
+    "vaba_gb": 18.13,
+    "kasutus_protsent": 42.8
+  },
+  "kettad": [
+    {
+      "haakepunkt": "C:\\",
+      "kokku_gb": 476.0,
+      "vaba_gb": 319.55,
+      "kasutus_protsent": 32.9
+    }
+  ],
+  "võrk": [
+    {
+      "nimi": "Ethernet",
+      "ipv4": "169.254.213.239",
+      "ühendatud": false
+    },
+    {
+      "nimi": "Kohalik võrguühendus* 1",
+      "ipv4": "169.254.97.169",
+      "ühendatud": false
+    },
+    {
+      "nimi": "Kohalik võrguühendus* 10",
+      "ipv4": "169.254.73.87",
+      "ühendatud": false
+    },
+    {
+      "nimi": "Ethernet 2",
+      "ipv4": "169.254.102.114",
+      "ühendatud": false
+    },
+    {
+      "nimi": "Wi-Fi",
+      "ipv4": "192.168.0.19",
+      "ühendatud": true
+    },
+    {
+      "nimi": "Bluetooth-võrguühendus",
+      "ipv4": "169.254.174.87",
+      "ühendatud": false
+    },
+    {
+      "nimi": "vEthernet (Default Switch)",
+      "ipv4": "172.22.16.1",
+      "ühendatud": true
+    },
+    {
+      "nimi": "vEthernet (WSL (Hyper-V firewall))",
+      "ipv4": "172.19.16.1",
+      "ühendatud": true
+    },
+    {
+      "nimi": "Loopback Pseudo-Interface 1",
+      "ipv4": null,
+      "ühendatud": true
+    }
+  ]
+}
