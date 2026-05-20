@@ -1,0 +1,6 @@
+nimi,host,port,kirjeldus
+google,google.com,443,Avalik võrgutest
+github,github.com,443,Git push
+oma-ruuter,192.168.0.1,80,Koduvõrgu gateway
+olematu,ei-ole-olemas.invalid,443,Peab maas olema (test)
+localhost-ssh,127.0.0.1,22,Lokaalne SSH
