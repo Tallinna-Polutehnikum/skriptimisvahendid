@@ -3,7 +3,7 @@ from datetime import date
 
 seadmed = []  # tühi nimekiri, kuhu salvestame kõik read
 
-with open("seadmed.csv", newline="", encoding="utf-8") as f:
+with open("it-seadmed.csv", newline="", encoding="utf-8") as f:
     lugeja = csv.DictReader(f)  # DictReader loeb iga rea sõnastikuna
     for rida in lugeja:
         seadmed.append(rida)    # lisa iga seade nimekirja
