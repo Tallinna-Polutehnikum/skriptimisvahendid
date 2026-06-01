@@ -8,6 +8,8 @@ param(
     [string] $Väljund = "suurimad_failid.csv"
 )
 
+Import-Module .\Saada-Teavitus.psm1 -Force
+
 # CSV skriptiga samasse kausta
 $baseDir = $PSScriptRoot
 $outputPath = Join-Path -Path $baseDir -ChildPath $Väljund
@@ -63,13 +65,14 @@ $tulemus | Select-Object Nimi, Suurus, Tee | Format-Table -AutoSize
 if ($teavitusedLubatud) {
     $warnBytes = $WarnGB * 1GB
     $critBytes = $CritGB * 1GB
+    }
+foreach ($fail in $tulemus) {
+    $baite = (Get-Item $fail.Tee -ErrorAction SilentlyContinue).Length
 
-    foreach ($r in $tulemus) {
-        if ($r.Baite -ge $critBytes) {
-            Send-AlertMessage -Message "Väga suur fail: $($r.Tee) ($($r.Suurus))" -Severity Critical
-        }
-        elseif ($r.Baite -ge $warnBytes) {
-            Send-AlertMessage -Message "Suur fail: $($r.Tee) ($($r.Suurus))" -Severity Warning
-        }
+    if ($baite -ge 5GB) {
+        Send-AlertMessage -Message "Väga suur fail: $($fail.Nimi) ($($fail.Suurus))" -Severity Critical
+    }
+    elseif ($baite -ge 1GB) {
+        Send-AlertMessage -Message "Suur fail: $($fail.Nimi) ($($fail.Suurus))" -Severity Warning
     }
 }
