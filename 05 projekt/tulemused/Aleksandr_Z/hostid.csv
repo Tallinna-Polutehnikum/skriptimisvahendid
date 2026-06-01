@@ -1,0 +1,5 @@
+nimi,host,port,kirjeldus
+google,google.com,443,Avalik võrgutest
+github,github.com,443,Git push
+localhost,127.0.0.1,80,Lokaalne test
+vale-host,ei-ole-olemas.invalid,443,Test FAIL
