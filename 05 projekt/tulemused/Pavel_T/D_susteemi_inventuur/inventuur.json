@@ -1,0 +1,15 @@
+{
+    "os": "Linux",
+    "os_version": "#1 SMP PREEMPT_DYNAMIC Mon Dec  1 20:46:23 UTC 2025",
+    "processor": "",
+    "hostname": "Pavel-PC",
+    "python_version": "3.14.4",
+    "cpu_cores": 16,
+    "memory_gb": 7.57,
+    "disk_total_gb": 1006.85,
+    "disk_free_gb": 952.47,
+    "network_interfaces": [
+        "lo",
+        "eth0"
+    ]
+}
